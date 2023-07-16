@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock title %}
+
+{% block body %}
+<figure class="text-center">
+  <img src="{{ restaurant.image.url }}" class="img-fluid rounded" alt="{{ restaurant.image.url }}" style="max-height: 400px;">
+  <figcaption class="figure-caption" style="font-size: 24px;">Welcome to the Manager's portal!</figcaption>
+</figure>
+<div class="container mt-4">
+  <div class="text-start">
+    <h2 class="mb-4">Restaurant Info: </h2>
+    <p><strong>Name:</strong> {{ restaurant.name }}</p>
+    <p><strong>Address:</strong> {{ restaurant.address }}</p>
+    <p><strong>Opening Hours:</strong> {{ restaurant.opening_hours }}</p>
+    <p><strong>Cuisines:</strong> {{ restaurant.cuisines }}</p>
+    <p><strong>Location:</strong> {{ restaurant.location }}</p>
+    <h3 class="mt-4">Directions:</h3>
+    <p>{{ restaurant.directions }}</p>
+  </div>
+</div>
+{% endblock body %}

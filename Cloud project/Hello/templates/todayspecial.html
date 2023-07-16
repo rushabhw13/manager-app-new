@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}Today's Special{% endblock %}
+
+{% block body %}
+  <h1>Today's Special :</h1>
+  {% for special in specials %}
+  <div class="container ms-auto">
+  <div class="col-mb-4">
+    <div class= "card-md-4" style="width: 18rem;">
+      <img src="{{ special.image.url }}" class="card-img-top" alt="{{ special.name }}" style="height: 200px; object-fit: cover;">
+      <div class="card-body">
+        <h5 class="card-title">{{ special.name }}</h5>
+        <p class="card-text">{{ special.description }}</p>  
+      </div>
+    </div>
+  </div>
+    <a href="{% url 'update_todays_special' pk=special.pk %}" class="btn btn-primary">Update Today's Special</a>
+  {% empty %}
+    <p>No special menu available.</p>
+  {% endfor %}
+{% endblock %}

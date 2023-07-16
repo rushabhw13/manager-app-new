@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}Tables{% endblock title %}
+{% block body %}
+<div class="container">
+  <h1>Tables info:</h1>
+  {% for table in tables %}
+  <div class="card mb-3">
+    <div class="card-body">
+      <h5 class="card-title">{{ table.name }}</h5>
+      <p class="card-text">Seats: {{ table.tables_seats }}</p>
+      <p class="card-text">{{ table.description }}</p>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock body %}

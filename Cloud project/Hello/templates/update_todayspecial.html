@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}Update Today's Special{% endblock %}
+
+{% block body %}
+<div class="container ms-auto">
+  <h1>Update Today's Special</h1>
+  <form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Update</button>
+  </form>
+</div>
+{% endblock %}
