@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-manager-app-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: my-manager-app
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 8000
