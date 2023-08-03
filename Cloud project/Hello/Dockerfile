@@ -1,9 +1,6 @@
 # Use an official Python runtime as the base image
 FROM python:3.10
 
-# Set environment variables for Python buffering and avoiding .pyc files
-ENV PYTHONDONTWRITEBYTECODE 1
-ENV PYTHONUNBUFFERED 1
 
 # Set the working directory inside the container
 WORKDIR /app
