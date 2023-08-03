@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-manager-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: my-manager-app
+  template:
+    metadata:
+      labels:
+        app: my-manager-app
+    spec:
+      containers:
+      - name: my-manager-app-container
+        image: gcr.io/manager-app-subsystem/manager-docker:latest
+        ports:
+        - containerPort: 8000
